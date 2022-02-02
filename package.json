@@ -1,0 +1,61 @@
+{
+  "name": "appium-socket-driver",
+  "description": "Socket driver",
+  "keywords": [
+    "appium"
+  ],
+  "version": "1.0.0",
+  "author": "Andrey Kozhevnikov",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/coderus/appium-socket-driver.git"
+  },
+  "bugs": {
+    "url": "https://github.com/coderus/appium-socket-driver/issues"
+  },
+  "engines": [
+    "node"
+  ],
+  "appium": {
+    "driverName": "socket",
+    "automationName": "Socket",
+    "platformNames": [
+      "Socket"
+    ],
+    "mainClass": "SocketDriver"
+  },
+  "main": "./build/index.js",
+  "bin": {
+    "appium-socket-driver": "./build/index.js"
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "files": [
+    "index.js",
+    "lib",
+    "build/index.js",
+    "build/lib"
+  ],
+  "dependencies": {
+    "@babel/runtime": "^7.6.0",
+    "appium-base-driver": "^7.0.0",
+    "appium-support": "2.x"
+  },
+  "scripts": {
+    "build": "gulp transpile",
+    "mocha": "mocha",
+    "prepare": "gulp prepublish",
+    "watch": "gulp watch",
+    "coverage": "gulp coveralls",
+    "lint": "gulp lint",
+    "lint:fix": "gulp eslint --fix",
+    "clean": "rm -rf node_modules && rm -f package-lock.json && npm install"
+  },
+  "devDependencies": {
+    "appium-gulp-plugins": "^5.0.0",
+    "eslint-config-appium": "^4.0.1",
+    "gulp": "^4.0.0"
+  }
+}
