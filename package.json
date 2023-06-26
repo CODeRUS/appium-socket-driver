@@ -4,7 +4,7 @@
   "keywords": [
     "appium"
   ],
-  "version": "1.0.0",
+  "version": "1.0.7",
   "author": "Andrey Kozhevnikov",
   "license": "Apache-2.0",
   "repository": {
@@ -26,36 +26,31 @@
     "mainClass": "SocketDriver"
   },
   "main": "./build/index.js",
-  "bin": {
-    "appium-socket-driver": "./build/index.js"
-  },
+  "bin": {},
   "directories": {
     "lib": "lib"
   },
   "files": [
-    "index.js",
     "lib",
-    "build/index.js",
-    "build/lib"
+    "build"
   ],
   "dependencies": {
-    "@babel/runtime": "^7.6.0",
-    "appium-base-driver": "^7.0.0",
-    "appium-support": "2.x"
+    "appium": "^2.0.0",
+    "@appium/support": "^4.0.0",
+    "appium-base-driver": "^7.0.0"
   },
   "scripts": {
+    "clean": "rm -rf node_modules && rm -f package-lock.json && npm install",
     "build": "gulp transpile",
     "mocha": "mocha",
-    "prepare": "gulp prepublish",
-    "watch": "gulp watch",
-    "coverage": "gulp coveralls",
-    "lint": "gulp lint",
-    "lint:fix": "gulp eslint --fix",
-    "clean": "rm -rf node_modules && rm -f package-lock.json && npm install"
+    "prepare": "gulp prepublish"
   },
   "devDependencies": {
+    "appium": "next",
+    "appium-socket-driver": "file:.",
     "appium-gulp-plugins": "^5.0.0",
-    "eslint-config-appium": "^4.0.1",
-    "gulp": "^4.0.0"
+    "chai": "^4.1.2",
+    "gulp": "^4.0.0",
+    "mocha": "^10.0.0"
   }
 }
